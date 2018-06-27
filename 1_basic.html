@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html> 
+  <head> 
+    
+    <script src="codef/codef_core.js"></script> 
+    <script> 
+      
+      var myimage=new image('media/devcon-6-1.jpg');
+      var mycanvas;
+      
+      var myimageX=0;
+      var myimageMove=1;
+      
+      function init(){
+        mycanvas=new canvas(800,600,"main");
+        go();
+      }
+      
+      function go(){
+//        mycanvas.fill('#000000');
+        mycanvas.fill('black');
+myimage.draw(mycanvas,myimageX,200);
+    
+       
+        
+        
+        myimageX+=myimageMove;
+        
+        if(myimageX>800-myimage.img.width)
+          myimageMove=-1;
+        if(myimageX<0)
+          myimageMove=1;
+        
+        
+        requestAnimFrame( go );
+      }
+      
+    </script> 
+  </head> 
+  <body onLoad="init();">
+<div id="main"></div>
+  </body> 
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html> 
+    <head> 
+        <script src="codef/codef_core.js"></script> 
+        <script src="codef/codef_music.js"></script>     
+        <script>
+            var player = new music("MK");
+            player.stereo(true);
+            player.LoadAndRun('media/sound_1.mod');
+        </script>
+
+        <script>
+            var myfont = new image('media/font2.png');
+            var mycanvas;
+            var myscrolltext;
+
+            var myscrollparam = [
+                {myvalue: 0, amp: 125, inc: 0.2, offset: -0.05},
+            ];
+
+
+            function init() {
+                mycanvas = new canvas(640, 480, "main");
+
+                go();
+            }
+
+            function go() {
+                mycanvas.fill('#000000');
+                requestAnimFrame(go);
+            }
+
+        </script> 
+    </head> 
+    <body onLoad="init();">
+        <br>
+        <br>
+    <center><div id="main"></div></center>
+</body> 
+</html>
